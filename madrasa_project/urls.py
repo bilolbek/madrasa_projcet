@@ -18,12 +18,14 @@ from django.urls import path
 from django.urls import re_path
 from django.views.static import serve
 from madrasa_project import settings
+from main.views import indexHandler
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-
     re_path(r'^media/(?P<path>.*)$', serve, {
         'document_root': settings.MEDIA_ROOT
-    })
+    }),
+
+    path('', indexHandler),
 ]
