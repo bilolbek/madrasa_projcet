@@ -10,6 +10,7 @@ class Filial(models.Model):
     instagram = models.CharField(max_length=300, blank=True)
     whatsapp = models.CharField(max_length=300,  blank=True)
     email = models.EmailField(max_length=300,  blank=True)
+    rating = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
@@ -30,7 +31,7 @@ class Course(models.Model):
     description = models.TextField(max_length=600)
     status = models.IntegerField(default=0)
     logo = models.ImageField(upload_to='upload', blank=True)
-
+    rating = models.IntegerField(default=0)
     def __str__(self):
         return self.title
 
@@ -41,7 +42,7 @@ class Prize(models.Model):
     description = models.TextField(max_length=600)
     status = models.IntegerField(default=0)
     logo = models.ImageField(upload_to='upload', blank=True)
-
+    rating = models.IntegerField(default=0)
     def __str__(self):
         return self.title
 
@@ -70,6 +71,7 @@ class Staff(models.Model):
     logo = models.ImageField(upload_to='upload', blank=True)
     filial = models.ForeignKey(Filial, on_delete=models.CASCADE)
     sublect = models.CharField(max_length=300)
+    rating = models.IntegerField(default=0)
 
     def __str__(self):
         return self.last_name
@@ -79,6 +81,7 @@ class Vacancy(models.Model):
     description = models.TextField(max_length=600)
     status = models.IntegerField(default=0)
     logo = models.ImageField(upload_to='upload', blank=True)
+    rating = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title

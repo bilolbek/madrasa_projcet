@@ -11,12 +11,12 @@ from main.models import Vacancy
 
 
 def indexHandler(request):
-    courses = Course.objects.filter(status=0)
-    prizes = Prize.objects.filter(status=0)
+    courses = Course.objects.filter(status=0).order_by('rating')
+    prizes = Prize.objects.filter(status=0).order_by('rating')
     informations = Information.objects.filter(status=0)
-    filials = Filial.objects.filter(status=0)
+    filials = Filial.objects.filter(status=0).order_by('rating')
     vacancies = Vacancy.objects.filter(status=0)
-    staffs = Staff.objects.filter(status=0)
+    staffs = Staff.objects.filter(status=0).order_by('rating')
     if informations:
         information = informations[0]
 
