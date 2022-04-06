@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+</head>
+<body>
+<h1>Madrasa</h1>
+Courses
+<ul>
+    {% for course in courses %}
+        <li>
+            {{ course.title }} - <img style="width: 150px;" src="/media/{{ course.logo }}" alt="курсы лого">
+        </li>
+    {% endfor %}
+</ul>
+<hr>
+Prizes
+<ul>
+    {% for prize in prizes %}
+        <li>
+            {{ prize.title }} - <img style="width: 150px;" src="/media/{{ prize.logo }}" alt="наши достижения">
+        </li>
+    {% endfor %}
+</ul>
+<hr>
+About
+{% if information %}
+    <h2>{{ information.title }}</h2>
+    <p>{{ information.description }}</p>
+    <iframe width="560" height="315" src="{{ information.video_link}}" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+{% endif %}
+
+<hr>
+Filial
+<ul>
+    {% for filial in filials %}
+        <li>
+            {{ filial.title }} - {{ filial.adress }}
+        </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
