@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 class Filial(models.Model):
@@ -8,8 +9,8 @@ class Filial(models.Model):
     adress = models.CharField(max_length=300)
     phone = models.CharField(max_length=300)
     instagram = models.CharField(max_length=300, blank=True)
-    whatsapp = models.CharField(max_length=300,  blank=True)
-    email = models.EmailField(max_length=300,  blank=True)
+    whatsapp = models.CharField(max_length=300, blank=True)
+    email = models.EmailField(max_length=300, blank=True)
     rating = models.IntegerField(default=0)
 
     def __str__(self):
@@ -32,6 +33,7 @@ class Course(models.Model):
     status = models.IntegerField(default=0)
     logo = models.ImageField(upload_to='upload', blank=True)
     rating = models.IntegerField(default=0)
+
     def __str__(self):
         return self.title
 
@@ -43,8 +45,10 @@ class Prize(models.Model):
     status = models.IntegerField(default=0)
     logo = models.ImageField(upload_to='upload', blank=True)
     rating = models.IntegerField(default=0)
+
     def __str__(self):
         return self.title
+
 
 class Information(models.Model):
     title = models.CharField(max_length=300)
@@ -57,10 +61,9 @@ class Information(models.Model):
     instagram = models.CharField(max_length=300, blank=True)
     email = models.EmailField(max_length=300, blank=True)
 
-
-
     def __str__(self):
         return self.title
+
 
 class Staff(models.Model):
     last_name = models.CharField(max_length=300)
@@ -75,6 +78,7 @@ class Staff(models.Model):
 
     def __str__(self):
         return self.last_name
+
 
 class Vacancy(models.Model):
     title = models.CharField(max_length=300)

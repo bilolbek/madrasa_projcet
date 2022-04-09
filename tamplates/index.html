@@ -4,7 +4,7 @@
 
     <!-- Define Charset -->
     <meta charset="UTF-8">
-    <link rel="icon" href="/static//static/img/logo.png" type="/static/img/png">
+    <link rel="icon" href="/static/img/logo.png" type="/static/img/png">
 
     <!-- Page Title -->
     <title>Madrasa</title>
@@ -73,10 +73,11 @@
                     <img src="/static//static/img/knigaaa.png" alt="">
                 </div>
                 <div class="col-sm-5">
-                    <h2>Учебный центр лидер дополнительного образования</h2>
-                    <h4>Сделай первый шаг к успеху – запишись на наши курсы</h4>
-                    <form id="request" class="row suscribe" action="request-form.htm" method="post"
+                    <h2>Медресе </h2>
+                    <h4>Оставь заявку чтобы проконсульироваться </h4>
+                    <form id="request" class="row suscribe" action="/" method="post"
                           accept-charset="utf-8">
+                        {% csrf_token %}
                         <div class="col-sm-12">
                             <input type="text" class="form-control" placeholder="Имя" name="name">
 
@@ -285,13 +286,9 @@
                         </div>
                     {% endif %}
                 {% endfor %}
-
             </div>
-
-
         </div>
     </section>
-
 {% endfor %}
 <!-- end Teachers -->
 
@@ -311,7 +308,6 @@
                 <div class="col-sm-3">
                     <ul class="table-list">
                         <li class="table-header">{{ vacancy.title }}</li>
-
                         <li class="table-price">
                             <img src="/media/{{ vacancy.logo }}">
                         </li>
@@ -338,12 +334,12 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8">
-                <h2>Записывайся на наши уроки и покоряй мир!</h2>
+                <h2>Оставь заявку на консультацию</h2>
             </div>
             <div class="col-sm-4">
                 <a href="index.html#" class="btn-default n1"><img src="/static/img/icons/10.png"
-                                                                  style="width: 20px;height: 23px;"></i>&nbsp;Записаться
-                    на курс</a>
+                                                                  style="width: 20px;height: 23px;"></i>&nbsp;Оставить
+                    заявку</a>
             </div>
         </div>
     </div>
@@ -375,7 +371,7 @@
             <div class="col-sm-6 data-info" style="line-height: 2;">
                 <p><a href="mailto: Eduland@gmail.com?subject=Вопрос от студента" target="_blank"><img
                         src="/static/img/icons/5.png" style="width: 23px;
-						height: 23px;">&nbsp; Eduland@gmail.com</a></p>
+					height: 23px;">&nbsp; Eduland@gmail.com</a></p>
 
                 <p><a href="tel: +7 700 123 45 67" target="_blank"><img src="/static/img/icons/2.png" style="width: 20px;
 						height: 20px;"></i>&nbsp;+7 700 123 45 67</a></p>
@@ -388,29 +384,14 @@
 <!-- Footer -->
 <footer>
     <div class="container">
-        <p style="color: white;">Все права защищены © 2020</p>
-
+        <p style="color: white;"> © 2020</p>
         <ul style="text-align: -webkit-center;padding:0;">
-            <li class="haaa"><a href="https://instagram.com/al1khon_?igshid=ajx5fzzsfyrg"
-                                style="color: white;font-family: bold;" target="_blank"><img
-                    src="/static/img/icons/3.png" alt="" style="width: 30px;
-								  height: 30px;
-								  margin-left: -30px;
-							      margin-top: -4px;">&nbsp;Эшматов Алихон</a></li>
-
-            <li class="haaa"><a href="https://instagram.com/bahtiyor_holmetov?igshid=1tx7hwojv7jlj"
-                                style="color: white;font-family: bold;" target="_blank"><img
-                    src="/static/img/icons/3.png" alt="" style="width: 30px;
-										       height: 30px;
-										       margin-left: -30px;
-										       margin-top: -4px;">&nbsp;Халметов Бахтиёр</a></li>
-
-            <li class="haaa"><a href="https://instagram.com/nodir_musamatov_official?igshid=xqg51triq0pj"
-                                style="color: white;font-family: bold;" target="_blank"><img
-                    src="/static/img/icons/3.png" alt="" style="width: 30px;
-												height: 30px;
-										        margin-left: -30px;
-										   	    margin-top: -4px;">&nbsp;Мусаматов Нодир</a></li>
+            <li class="haaa"><a href="https://www.instagram.com/bah_abh/" style="color: white;font-family: bold;"
+                                target="_blank"><img src="/static/img/icons/3.png"
+                                                     alt="" style="width: 30px;
+								height: 30px;
+								margin-left: -30px;
+							    margin-top: -4px;">&nbsp;Атабеков Билолбек</a></li>
         </ul>
     </div>
 </footer>
@@ -550,10 +531,6 @@
         return false;
     });
 
-    $('#request').submit(function () {
-        alert("Вы успешно отправили запрос");
-        return false;
-    })
 </script>
 
 
